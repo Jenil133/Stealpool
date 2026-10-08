@@ -36,11 +36,14 @@ else()
   target_compile_options(stealpool_warnings INTERFACE -Wall -Wextra -Wpedantic)
 endif()
 
-add_library(stealpool INTERFACE)
+add_library(stealpool
+  src/thread_pool.cpp)
 add_library(stealpool::stealpool ALIAS stealpool)
-target_include_directories(stealpool INTERFACE ${PROJECT_SOURCE_DIR}/include)
-target_compile_features(stealpool INTERFACE cxx_std_20)
-target_link_libraries(stealpool INTERFACE Threads::Threads)
+target_include_directories(stealpool PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_compile_features(stealpool PUBLIC cxx_std_20)
+target_link_libraries(stealpool
+  PUBLIC Threads::Threads
+  PRIVATE stealpool_warnings)
 
 if(STEALPOOL_BUILD_TESTS)
   enable_testing()
