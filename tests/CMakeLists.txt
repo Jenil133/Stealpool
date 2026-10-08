@@ -16,3 +16,5 @@ function(stealpool_add_test name)
 endfunction()
 
 stealpool_add_test(deque_test)
+stealpool_add_test(thread_pool_test)
+stealpool_add_test(task_group_test)
