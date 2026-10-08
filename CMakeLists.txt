@@ -37,6 +37,7 @@ else()
 endif()
 
 add_library(stealpool
+  src/shared_queue_pool.cpp
   src/thread_pool.cpp)
 add_library(stealpool::stealpool ALIAS stealpool)
 target_include_directories(stealpool PUBLIC ${PROJECT_SOURCE_DIR}/include)
