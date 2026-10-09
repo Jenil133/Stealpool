@@ -11,6 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(STEALPOOL_BUILD_TESTS "Build the GoogleTest suite" ON)
+option(STEALPOOL_BUILD_EXAMPLES "Build the example programs" ON)
 set(STEALPOOL_SANITIZER "" CACHE STRING "Sanitizer for every target: empty, 'address' (ASan+UBSan) or 'thread'")
 set_property(CACHE STEALPOOL_SANITIZER PROPERTY STRINGS "" address thread)
 
@@ -48,6 +49,10 @@ target_link_libraries(stealpool
 
 if(STEALPOOL_BUILD_TESTS)
   enable_testing()
+endif()
+
+if(STEALPOOL_BUILD_EXAMPLES)
+  add_subdirectory(examples)
 endif()
 
 if(STEALPOOL_BUILD_TESTS)
