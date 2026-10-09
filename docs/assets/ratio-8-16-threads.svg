@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="758" viewBox="0 0 960 758" role="img" aria-labelledby="title desc">
+<title id="title">Shared-queue / work-stealing time ratio</title>
+<desc id="desc">Parallel merge sort, macOS: 8 threads 1.07, 10 threads 1.10, 12 threads 1.06, 16 threads 1.07; Parallel merge sort, Linux: 8 threads 1.03, 10 threads 0.99, 12 threads 1.09, 16 threads 0.98; Unbalanced tree reduction, default, macOS: 8 threads 1.01, 10 threads 1.03, 12 threads 1.04, 16 threads 1.02; Unbalanced tree reduction, default, Linux: 8 threads 0.99, 10 threads 1.04, 12 threads 0.98, 16 threads 1.06; Unbalanced tree reduction, fine-grained, macOS: 8 threads 7.17, 10 threads 6.81, 12 threads 6.49, 16 threads 6.58; Unbalanced tree reduction, fine-grained, Linux: 8 threads 7.87, 10 threads 9.96, 12 threads 9.39, 16 threads 10.31; Task overhead, macOS: 8 threads 17.66, 10 threads 17.21, 12 threads 16.25, 16 threads 15.01; Task overhead, Linux: 8 threads 24.39, 10 threads 34.76, 12 threads 47.26, 16 threads 84.22.</desc>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;fill:#6e7781}.title{font-size:16px;font-weight:600}.sub{font-size:12px}.tick{font-size:11px;font-variant-numeric:tabular-nums}.axis{font-size:12px}.label{font-size:12px;font-weight:600}.value{font-size:11px;font-variant-numeric:tabular-nums}.grid{stroke:#8b949e;stroke-opacity:.25;stroke-width:1}.base{stroke:#8b949e;stroke-opacity:.7;stroke-width:1}.mark8{stroke:#8b949e;stroke-opacity:.8;stroke-width:1;stroke-dasharray:4 4}</style>
+<text class="title" x="24" y="28">Shared-queue time / work-stealing time at 8–16 threads</text>
+<text class="sub" x="24" y="48">Above 1: work stealing is faster. Median wall-clock time per run for each pool; log scale.</text>
+<text class="axis" x="24" y="76">threads</text>
+<rect x="84" y="66" width="14" height="11" rx="2" fill="#86b6ef"/>
+<text class="axis" x="104" y="76">8</text>
+<rect x="140" y="66" width="14" height="11" rx="2" fill="#5598e7"/>
+<text class="axis" x="160" y="76">10</text>
+<rect x="196" y="66" width="14" height="11" rx="2" fill="#2a78d6"/>
+<text class="axis" x="216" y="76">12</text>
+<rect x="252" y="66" width="14" height="11" rx="2" fill="#1c5cab"/>
+<text class="axis" x="272" y="76">16</text>
+<text class="tick" x="187.99" y="724" text-anchor="middle">1</text>
+<text class="tick" x="295.76" y="724" text-anchor="middle">2</text>
+<text class="tick" x="438.23" y="724" text-anchor="middle">5</text>
+<text class="tick" x="546" y="724" text-anchor="middle">10</text>
+<text class="tick" x="653.77" y="724" text-anchor="middle">20</text>
+<text class="tick" x="796.23" y="724" text-anchor="middle">50</text>
+<text class="tick" x="904" y="724" text-anchor="middle">100</text>
+<text class="axis" x="527" y="746" text-anchor="middle">shared_queue time / work_stealing time (×, log scale)</text>
+<text class="label" x="24" y="112">Parallel merge sort</text>
+<text class="axis" x="40" y="152.5">macOS</text>
+<line class="base" x1="187.99" y1="118" x2="187.99" y2="179"/>
+<line class="grid" x1="295.76" y1="118" x2="295.76" y2="179"/>
+<line class="grid" x1="438.23" y1="118" x2="438.23" y2="179"/>
+<line class="grid" x1="546" y1="118" x2="546" y2="179"/>
+<line class="grid" x1="653.77" y1="118" x2="653.77" y2="179"/>
+<line class="grid" x1="796.23" y1="118" x2="796.23" y2="179"/>
+<line class="grid" x1="904" y1="118" x2="904" y2="179"/>
+<text class="tick" x="140" y="131" text-anchor="end">8</text>
+<rect x="187.99" y="122" width="10.83" height="11" rx="2" fill="#86b6ef" data-workload="parallel-sort" data-platform="macos" data-threads="8" data-ratio="1.0721538"><title>Parallel merge sort, macOS, 8 threads: shared queue 51.68 ms / work stealing 48.2 ms = 1.07</title></rect>
+<text class="value" x="203.83" y="131">1.07</text>
+<text class="tick" x="140" y="145" text-anchor="end">10</text>
+<rect x="187.99" y="136" width="14.26" height="11" rx="2" fill="#5598e7" data-workload="parallel-sort" data-platform="macos" data-threads="10" data-ratio="1.09606982"><title>Parallel merge sort, macOS, 10 threads: shared queue 44.85 ms / work stealing 40.92 ms = 1.10</title></rect>
+<text class="value" x="207.26" y="145">1.10</text>
+<text class="tick" x="140" y="159" text-anchor="end">12</text>
+<rect x="187.99" y="150" width="8.62" height="11" rx="2" fill="#2a78d6" data-workload="parallel-sort" data-platform="macos" data-threads="12" data-ratio="1.05697935"><title>Parallel merge sort, macOS, 12 threads: shared queue 44.94 ms / work stealing 42.52 ms = 1.06</title></rect>
+<text class="value" x="201.61" y="159">1.06</text>
+<text class="tick" x="140" y="173" text-anchor="end">16</text>
+<rect x="187.99" y="164" width="10.44" height="11" rx="2" fill="#1c5cab" data-workload="parallel-sort" data-platform="macos" data-threads="16" data-ratio="1.06945541"><title>Parallel merge sort, macOS, 16 threads: shared queue 46.01 ms / work stealing 43.03 ms = 1.07</title></rect>
+<text class="value" x="203.43" y="173">1.07</text>
+<text class="axis" x="40" y="215.5">Linux</text>
+<line class="base" x1="187.99" y1="181" x2="187.99" y2="242"/>
+<line class="grid" x1="295.76" y1="181" x2="295.76" y2="242"/>
+<line class="grid" x1="438.23" y1="181" x2="438.23" y2="242"/>
+<line class="grid" x1="546" y1="181" x2="546" y2="242"/>
+<line class="grid" x1="653.77" y1="181" x2="653.77" y2="242"/>
+<line class="grid" x1="796.23" y1="181" x2="796.23" y2="242"/>
+<line class="grid" x1="904" y1="181" x2="904" y2="242"/>
+<text class="tick" x="140" y="194" text-anchor="end">8</text>
+<rect x="187.99" y="185" width="4.41" height="11" rx="2" fill="#86b6ef" data-workload="parallel-sort" data-platform="linux" data-threads="8" data-ratio="1.02879614"><title>Parallel merge sort, Linux, 8 threads: shared queue 90.06 ms / work stealing 87.54 ms = 1.03</title></rect>
+<text class="value" x="197.41" y="194">1.03</text>
+<text class="tick" x="140" y="208" text-anchor="end">10</text>
+<rect x="186.31" y="199" width="1.68" height="11" rx="2" fill="#5598e7" data-workload="parallel-sort" data-platform="linux" data-threads="10" data-ratio="0.989249924"><title>Parallel merge sort, Linux, 10 threads: shared queue 80.05 ms / work stealing 80.92 ms = 0.99</title></rect>
+<text class="value" x="192.99" y="208">0.99</text>
+<text class="tick" x="140" y="222" text-anchor="end">12</text>
+<rect x="187.99" y="213" width="13.91" height="11" rx="2" fill="#2a78d6" data-workload="parallel-sort" data-platform="linux" data-threads="12" data-ratio="1.0936078"><title>Parallel merge sort, Linux, 12 threads: shared queue 81.02 ms / work stealing 74.08 ms = 1.09</title></rect>
+<text class="value" x="206.91" y="222">1.09</text>
+<text class="tick" x="140" y="236" text-anchor="end">16</text>
+<rect x="184.69" y="227" width="3.3" height="11" rx="2" fill="#1c5cab" data-workload="parallel-sort" data-platform="linux" data-threads="16" data-ratio="0.979001666"><title>Parallel merge sort, Linux, 16 threads: shared queue 75.41 ms / work stealing 77.02 ms = 0.98</title></rect>
+<text class="value" x="192.99" y="236">0.98</text>
+<text class="label" x="24" y="268">Unbalanced tree reduction, default</text>
+<text class="axis" x="40" y="308.5">macOS</text>
+<line class="base" x1="187.99" y1="274" x2="187.99" y2="335"/>
+<line class="grid" x1="295.76" y1="274" x2="295.76" y2="335"/>
+<line class="grid" x1="438.23" y1="274" x2="438.23" y2="335"/>
+<line class="grid" x1="546" y1="274" x2="546" y2="335"/>
+<line class="grid" x1="653.77" y1="274" x2="653.77" y2="335"/>
+<line class="grid" x1="796.23" y1="274" x2="796.23" y2="335"/>
+<line class="grid" x1="904" y1="274" x2="904" y2="335"/>
+<text class="tick" x="140" y="287" text-anchor="end">8</text>
+<rect x="187.99" y="278" width="1.51" height="11" rx="2" fill="#86b6ef" data-workload="tree-default" data-platform="macos" data-threads="8" data-ratio="1.00973853"><title>Unbalanced tree reduction, default, macOS, 8 threads: shared queue 23.24 ms / work stealing 23.02 ms = 1.01</title></rect>
+<text class="value" x="194.5" y="287">1.01</text>
+<text class="tick" x="140" y="301" text-anchor="end">10</text>
+<rect x="187.99" y="292" width="4.38" height="11" rx="2" fill="#5598e7" data-workload="tree-default" data-platform="macos" data-threads="10" data-ratio="1.02859657"><title>Unbalanced tree reduction, default, macOS, 10 threads: shared queue 21 ms / work stealing 20.42 ms = 1.03</title></rect>
+<text class="value" x="197.38" y="301">1.03</text>
+<text class="tick" x="140" y="315" text-anchor="end">12</text>
+<rect x="187.99" y="306" width="6.4" height="11" rx="2" fill="#2a78d6" data-workload="tree-default" data-platform="macos" data-threads="12" data-ratio="1.04200851"><title>Unbalanced tree reduction, default, macOS, 12 threads: shared queue 21.75 ms / work stealing 20.88 ms = 1.04</title></rect>
+<text class="value" x="199.39" y="315">1.04</text>
+<text class="tick" x="140" y="329" text-anchor="end">16</text>
+<rect x="187.99" y="320" width="2.96" height="11" rx="2" fill="#1c5cab" data-workload="tree-default" data-platform="macos" data-threads="16" data-ratio="1.01919782"><title>Unbalanced tree reduction, default, macOS, 16 threads: shared queue 20.66 ms / work stealing 20.28 ms = 1.02</title></rect>
+<text class="value" x="195.95" y="329">1.02</text>
+<text class="axis" x="40" y="371.5">Linux</text>
+<line class="base" x1="187.99" y1="337" x2="187.99" y2="398"/>
+<line class="grid" x1="295.76" y1="337" x2="295.76" y2="398"/>
+<line class="grid" x1="438.23" y1="337" x2="438.23" y2="398"/>
+<line class="grid" x1="546" y1="337" x2="546" y2="398"/>
+<line class="grid" x1="653.77" y1="337" x2="653.77" y2="398"/>
+<line class="grid" x1="796.23" y1="337" x2="796.23" y2="398"/>
+<line class="grid" x1="904" y1="337" x2="904" y2="398"/>
+<text class="tick" x="140" y="350" text-anchor="end">8</text>
+<rect x="186.15" y="341" width="1.84" height="11" rx="2" fill="#86b6ef" data-workload="tree-default" data-platform="linux" data-threads="8" data-ratio="0.988231245"><title>Unbalanced tree reduction, default, Linux, 8 threads: shared queue 25.3 ms / work stealing 25.6 ms = 0.99</title></rect>
+<text class="value" x="192.99" y="350">0.99</text>
+<text class="tick" x="140" y="364" text-anchor="end">10</text>
+<rect x="187.99" y="355" width="5.68" height="11" rx="2" fill="#5598e7" data-workload="tree-default" data-platform="linux" data-threads="10" data-ratio="1.03721623"><title>Unbalanced tree reduction, default, Linux, 10 threads: shared queue 23.91 ms / work stealing 23.06 ms = 1.04</title></rect>
+<text class="value" x="198.67" y="364">1.04</text>
+<text class="tick" x="140" y="378" text-anchor="end">12</text>
+<rect x="185.33" y="369" width="2.66" height="11" rx="2" fill="#2a78d6" data-workload="tree-default" data-platform="linux" data-threads="12" data-ratio="0.983036902"><title>Unbalanced tree reduction, default, Linux, 12 threads: shared queue 21.98 ms / work stealing 22.36 ms = 0.98</title></rect>
+<text class="value" x="192.99" y="378">0.98</text>
+<text class="tick" x="140" y="392" text-anchor="end">16</text>
+<rect x="187.99" y="383" width="8.34" height="11" rx="2" fill="#1c5cab" data-workload="tree-default" data-platform="linux" data-threads="16" data-ratio="1.05510855"><title>Unbalanced tree reduction, default, Linux, 16 threads: shared queue 23.66 ms / work stealing 22.42 ms = 1.06</title></rect>
+<text class="value" x="201.33" y="392">1.06</text>
+<text class="label" x="24" y="424">Unbalanced tree reduction, fine-grained</text>
+<text class="axis" x="40" y="464.5">macOS</text>
+<line class="base" x1="187.99" y1="430" x2="187.99" y2="491"/>
+<line class="grid" x1="295.76" y1="430" x2="295.76" y2="491"/>
+<line class="grid" x1="438.23" y1="430" x2="438.23" y2="491"/>
+<line class="grid" x1="546" y1="430" x2="546" y2="491"/>
+<line class="grid" x1="653.77" y1="430" x2="653.77" y2="491"/>
+<line class="grid" x1="796.23" y1="430" x2="796.23" y2="491"/>
+<line class="grid" x1="904" y1="430" x2="904" y2="491"/>
+<text class="tick" x="140" y="443" text-anchor="end">8</text>
+<rect x="187.99" y="434" width="306.37" height="11" rx="2" fill="#86b6ef" data-workload="tree-fine" data-platform="macos" data-threads="8" data-ratio="7.17402937"><title>Unbalanced tree reduction, fine-grained, macOS, 8 threads: shared queue 51.48 ms / work stealing 7.176 ms = 7.17</title></rect>
+<text class="value" x="499.36" y="443">7.17</text>
+<text class="tick" x="140" y="457" text-anchor="end">10</text>
+<rect x="187.99" y="448" width="298.25" height="11" rx="2" fill="#5598e7" data-workload="tree-fine" data-platform="macos" data-threads="10" data-ratio="6.80919112"><title>Unbalanced tree reduction, fine-grained, macOS, 10 threads: shared queue 49.76 ms / work stealing 7.307 ms = 6.81</title></rect>
+<text class="value" x="491.24" y="457">6.81</text>
+<text class="tick" x="140" y="471" text-anchor="end">12</text>
+<rect x="187.99" y="462" width="290.9" height="11" rx="2" fill="#2a78d6" data-workload="tree-fine" data-platform="macos" data-threads="12" data-ratio="6.49455034"><title>Unbalanced tree reduction, fine-grained, macOS, 12 threads: shared queue 47.14 ms / work stealing 7.258 ms = 6.49</title></rect>
+<text class="value" x="483.89" y="471">6.49</text>
+<text class="tick" x="140" y="485" text-anchor="end">16</text>
+<rect x="187.99" y="476" width="293" height="11" rx="2" fill="#1c5cab" data-workload="tree-fine" data-platform="macos" data-threads="16" data-ratio="6.58320982"><title>Unbalanced tree reduction, fine-grained, macOS, 16 threads: shared queue 46.57 ms / work stealing 7.074 ms = 6.58</title></rect>
+<text class="value" x="486" y="485">6.58</text>
+<text class="axis" x="40" y="527.5">Linux</text>
+<line class="base" x1="187.99" y1="493" x2="187.99" y2="554"/>
+<line class="grid" x1="295.76" y1="493" x2="295.76" y2="554"/>
+<line class="grid" x1="438.23" y1="493" x2="438.23" y2="554"/>
+<line class="grid" x1="546" y1="493" x2="546" y2="554"/>
+<line class="grid" x1="653.77" y1="493" x2="653.77" y2="554"/>
+<line class="grid" x1="796.23" y1="493" x2="796.23" y2="554"/>
+<line class="grid" x1="904" y1="493" x2="904" y2="554"/>
+<text class="tick" x="140" y="506" text-anchor="end">8</text>
+<rect x="187.99" y="497" width="320.73" height="11" rx="2" fill="#86b6ef" data-workload="tree-fine" data-platform="linux" data-threads="8" data-ratio="7.86821487"><title>Unbalanced tree reduction, fine-grained, Linux, 8 threads: shared queue 41.27 ms / work stealing 5.245 ms = 7.87</title></rect>
+<text class="value" x="513.72" y="506">7.87</text>
+<text class="tick" x="140" y="520" text-anchor="end">10</text>
+<rect x="187.99" y="511" width="357.43" height="11" rx="2" fill="#5598e7" data-workload="tree-fine" data-platform="linux" data-threads="10" data-ratio="9.96332258"><title>Unbalanced tree reduction, fine-grained, Linux, 10 threads: shared queue 46.24 ms / work stealing 4.641 ms = 9.96</title></rect>
+<text class="value" x="550.43" y="520">9.96</text>
+<text class="tick" x="140" y="534" text-anchor="end">12</text>
+<rect x="187.99" y="525" width="348.24" height="11" rx="2" fill="#2a78d6" data-workload="tree-fine" data-platform="linux" data-threads="12" data-ratio="9.39149789"><title>Unbalanced tree reduction, fine-grained, Linux, 12 threads: shared queue 46.65 ms / work stealing 4.967 ms = 9.39</title></rect>
+<text class="value" x="541.24" y="534">9.39</text>
+<text class="tick" x="140" y="548" text-anchor="end">16</text>
+<rect x="187.99" y="539" width="362.82" height="11" rx="2" fill="#1c5cab" data-workload="tree-fine" data-platform="linux" data-threads="16" data-ratio="10.3144624"><title>Unbalanced tree reduction, fine-grained, Linux, 16 threads: shared queue 55.33 ms / work stealing 5.365 ms = 10.31</title></rect>
+<text class="value" x="555.81" y="548">10.31</text>
+<text class="label" x="24" y="580">Task overhead</text>
+<text class="axis" x="40" y="620.5">macOS</text>
+<line class="base" x1="187.99" y1="586" x2="187.99" y2="647"/>
+<line class="grid" x1="295.76" y1="586" x2="295.76" y2="647"/>
+<line class="grid" x1="438.23" y1="586" x2="438.23" y2="647"/>
+<line class="grid" x1="546" y1="586" x2="546" y2="647"/>
+<line class="grid" x1="653.77" y1="586" x2="653.77" y2="647"/>
+<line class="grid" x1="796.23" y1="586" x2="796.23" y2="647"/>
+<line class="grid" x1="904" y1="586" x2="904" y2="647"/>
+<text class="tick" x="140" y="599" text-anchor="end">8</text>
+<rect x="187.99" y="590" width="446.45" height="11" rx="2" fill="#86b6ef" data-workload="task-overhead" data-platform="macos" data-threads="8" data-ratio="17.662496"><title>Task overhead, macOS, 8 threads: shared queue 13.67 ms / work stealing 0.7739 ms = 17.66</title></rect>
+<text class="value" x="639.44" y="599">17.66</text>
+<text class="tick" x="140" y="613" text-anchor="end">10</text>
+<rect x="187.99" y="604" width="442.4" height="11" rx="2" fill="#5598e7" data-workload="task-overhead" data-platform="macos" data-threads="10" data-ratio="17.2080689"><title>Task overhead, macOS, 10 threads: shared queue 13.36 ms / work stealing 0.7765 ms = 17.21</title></rect>
+<text class="value" x="635.39" y="613">17.21</text>
+<text class="tick" x="140" y="627" text-anchor="end">12</text>
+<rect x="187.99" y="618" width="433.48" height="11" rx="2" fill="#2a78d6" data-workload="task-overhead" data-platform="macos" data-threads="12" data-ratio="16.2488726"><title>Task overhead, macOS, 12 threads: shared queue 12.95 ms / work stealing 0.7973 ms = 16.25</title></rect>
+<text class="value" x="626.47" y="627">16.25</text>
+<text class="tick" x="140" y="641" text-anchor="end">16</text>
+<rect x="187.99" y="632" width="421.19" height="11" rx="2" fill="#1c5cab" data-workload="task-overhead" data-platform="macos" data-threads="16" data-ratio="15.0144404"><title>Task overhead, macOS, 16 threads: shared queue 13.18 ms / work stealing 0.8776 ms = 15.01</title></rect>
+<text class="value" x="614.19" y="641">15.01</text>
+<text class="axis" x="40" y="683.5">Linux</text>
+<line class="base" x1="187.99" y1="649" x2="187.99" y2="710"/>
+<line class="grid" x1="295.76" y1="649" x2="295.76" y2="710"/>
+<line class="grid" x1="438.23" y1="649" x2="438.23" y2="710"/>
+<line class="grid" x1="546" y1="649" x2="546" y2="710"/>
+<line class="grid" x1="653.77" y1="649" x2="653.77" y2="710"/>
+<line class="grid" x1="796.23" y1="649" x2="796.23" y2="710"/>
+<line class="grid" x1="904" y1="649" x2="904" y2="710"/>
+<text class="tick" x="140" y="662" text-anchor="end">8</text>
+<rect x="187.99" y="653" width="496.61" height="11" rx="2" fill="#86b6ef" data-workload="task-overhead" data-platform="linux" data-threads="8" data-ratio="24.3868595"><title>Task overhead, Linux, 8 threads: shared queue 9.162 ms / work stealing 0.3757 ms = 24.39</title></rect>
+<text class="value" x="689.6" y="662">24.39</text>
+<text class="tick" x="140" y="676" text-anchor="end">10</text>
+<rect x="187.99" y="667" width="551.72" height="11" rx="2" fill="#5598e7" data-workload="task-overhead" data-platform="linux" data-threads="10" data-ratio="34.7616819"><title>Task overhead, Linux, 10 threads: shared queue 11.85 ms / work stealing 0.3408 ms = 34.76</title></rect>
+<text class="value" x="744.71" y="676">34.76</text>
+<text class="tick" x="140" y="690" text-anchor="end">12</text>
+<rect x="187.99" y="681" width="599.49" height="11" rx="2" fill="#2a78d6" data-workload="task-overhead" data-platform="linux" data-threads="12" data-ratio="47.263496"><title>Task overhead, Linux, 12 threads: shared queue 15.91 ms / work stealing 0.3367 ms = 47.26</title></rect>
+<text class="value" x="792.48" y="690">47.26</text>
+<text class="tick" x="140" y="704" text-anchor="end">16</text>
+<rect x="187.99" y="695" width="689.3" height="11" rx="2" fill="#1c5cab" data-workload="task-overhead" data-platform="linux" data-threads="16" data-ratio="84.2175264"><title>Task overhead, Linux, 16 threads: shared queue 27.8 ms / work stealing 0.3301 ms = 84.22</title></rect>
+<text class="value" x="882.29" y="704">84.22</text>
+</svg>

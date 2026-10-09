@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+<title id="title">Unbalanced tree reduction, default · Linux</title>
+<desc id="desc">Unbalanced tree reduction, default on Linux: speedup at 1 thread work stealing 1.00x, shared queue 1.00x, 2 threads work stealing 2.12x, shared queue 1.99x, 4 threads work stealing 3.90x, shared queue 3.32x, 6 threads work stealing 4.76x, shared queue 4.25x, 8 threads work stealing 5.16x, shared queue 4.91x, 10 threads work stealing 5.73x, shared queue 5.19x, 12 threads work stealing 5.91x, shared queue 5.65x, 16 threads work stealing 5.89x, shared queue 5.25x.</desc>
+<style>text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;fill:#6e7781}.title{font-size:16px;font-weight:600}.sub{font-size:12px}.tick{font-size:11px;font-variant-numeric:tabular-nums}.axis{font-size:12px}.label{font-size:12px;font-weight:600}.value{font-size:11px;font-variant-numeric:tabular-nums}.grid{stroke:#8b949e;stroke-opacity:.25;stroke-width:1}.base{stroke:#8b949e;stroke-opacity:.7;stroke-width:1}.mark8{stroke:#8b949e;stroke-opacity:.8;stroke-width:1;stroke-dasharray:4 4}</style>
+<text class="title" x="56" y="28">Unbalanced tree reduction, default · Linux</text>
+<text class="sub" x="56" y="48">2,097,152 nodes, cutoff 256, 64 rounds per node · median of 5 repetitions</text>
+<line x1="56" y1="70" x2="80" y2="70" stroke="#3987e5" stroke-width="2"/>
+<circle cx="68" cy="70" r="4.5" fill="#3987e5"></circle>
+<text class="axis" x="88" y="74">work stealing</text>
+<line x1="216" y1="70" x2="240" y2="70" stroke="#e5622a" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="224" y="66" width="8" height="8" fill="#e5622a"></rect>
+<text class="axis" x="248" y="74">shared queue</text>
+<line class="base" x1="56" y1="348" x2="616" y2="348"/>
+<text class="tick" x="48" y="352" text-anchor="end">0</text>
+<line class="grid" x1="56" y1="285" x2="616" y2="285"/>
+<text class="tick" x="48" y="289" text-anchor="end">2</text>
+<line class="grid" x1="56" y1="222" x2="616" y2="222"/>
+<text class="tick" x="48" y="226" text-anchor="end">4</text>
+<line class="grid" x1="56" y1="159" x2="616" y2="159"/>
+<text class="tick" x="48" y="163" text-anchor="end">6</text>
+<line class="grid" x1="56" y1="96" x2="616" y2="96"/>
+<text class="tick" x="48" y="100" text-anchor="end">8</text>
+<line class="grid" x1="91" y1="96" x2="91" y2="348"/>
+<text class="tick" x="91" y="366" text-anchor="middle">1</text>
+<line class="grid" x1="126" y1="96" x2="126" y2="348"/>
+<text class="tick" x="126" y="366" text-anchor="middle">2</text>
+<line class="grid" x1="196" y1="96" x2="196" y2="348"/>
+<text class="tick" x="196" y="366" text-anchor="middle">4</text>
+<line class="grid" x1="266" y1="96" x2="266" y2="348"/>
+<text class="tick" x="266" y="366" text-anchor="middle">6</text>
+<line class="grid" x1="336" y1="96" x2="336" y2="348"/>
+<text class="tick" x="336" y="366" text-anchor="middle">8</text>
+<line class="grid" x1="406" y1="96" x2="406" y2="348"/>
+<text class="tick" x="406" y="366" text-anchor="middle">10</text>
+<line class="grid" x1="476" y1="96" x2="476" y2="348"/>
+<text class="tick" x="476" y="366" text-anchor="middle">12</text>
+<line class="grid" x1="616" y1="96" x2="616" y2="348"/>
+<text class="tick" x="616" y="366" text-anchor="middle">16</text>
+<line class="base" x1="56" y1="96" x2="56" y2="348"/>
+<text class="axis" x="336" y="388" text-anchor="middle">threads</text>
+<text class="axis" transform="translate(16 222) rotate(-90)" text-anchor="middle">speedup vs 1 thread (×)</text>
+<line class="mark8" x1="336" y1="92" x2="336" y2="348"/>
+<text class="axis" x="342" y="104">8 threads</text>
+<polyline fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round" points="91,316.5 126,281.37 196,225.26 266,198 336,185.33 406,167.4 476,161.81 616,162.31"/>
+<circle cx="91" cy="316.5" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="1" data-ms="132.189917" data-speedup="1"><title>work stealing, 1 thread: 132.2 ms median, 1.00x</title></circle>
+<circle cx="126" cy="281.37" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="2" data-ms="62.4953561" data-speedup="2.11519583"><title>work stealing, 2 threads: 62.5 ms median, 2.12x</title></circle>
+<circle cx="196" cy="225.26" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="4" data-ms="33.9249013" data-speedup="3.89654536"><title>work stealing, 4 threads: 33.92 ms median, 3.90x</title></circle>
+<circle cx="266" cy="198" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="6" data-ms="27.7594167" data-speedup="4.76198467"><title>work stealing, 6 threads: 27.76 ms median, 4.76x</title></circle>
+<circle cx="336" cy="185.33" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="8" data-ms="25.5969667" data-speedup="5.16428053"><title>work stealing, 8 threads: 25.6 ms median, 5.16x</title></circle>
+<circle cx="406" cy="167.4" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="10" data-ms="23.0563271" data-speedup="5.73334668"><title>work stealing, 10 threads: 23.06 ms median, 5.73x</title></circle>
+<circle cx="476" cy="161.81" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="12" data-ms="22.3642264" data-speedup="5.91077528"><title>work stealing, 12 threads: 22.36 ms median, 5.91x</title></circle>
+<circle cx="616" cy="162.31" r="4.5" fill="#3987e5" data-pool="work_stealing" data-threads="16" data-ms="22.4245108" data-speedup="5.89488519"><title>work stealing, 16 threads: 22.42 ms median, 5.89x</title></circle>
+<polyline fill="none" stroke="#e5622a" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" points="91,316.5 126,285.45 196,243.38 266,214.06 336,193.43 406,184.5 476,170.15 616,182.74"/>
+<rect x="87" y="312.5" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="1" data-ms="124.126903" data-speedup="1"><title>shared queue, 1 thread: 124.1 ms median, 1.00x</title></rect>
+<rect x="122" y="281.45" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="2" data-ms="62.5142274" data-speedup="1.98557845"><title>shared queue, 2 threads: 62.51 ms median, 1.99x</title></rect>
+<rect x="192" y="239.38" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="4" data-ms="37.3743889" data-speedup="3.32117545"><title>shared queue, 4 threads: 37.37 ms median, 3.32x</title></rect>
+<rect x="262" y="210.06" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="6" data-ms="29.1929648" data-speedup="4.25194576"><title>shared queue, 6 threads: 29.19 ms median, 4.25x</title></rect>
+<rect x="332" y="189.43" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="8" data-ms="25.2957222" data-speedup="4.90703138"><title>shared queue, 8 threads: 25.3 ms median, 4.91x</title></rect>
+<rect x="402" y="180.5" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="10" data-ms="23.9143966" data-speedup="5.19046768"><title>shared queue, 10 threads: 23.91 ms median, 5.19x</title></rect>
+<rect x="472" y="166.15" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="12" data-ms="21.9848599" data-speedup="5.64601746"><title>shared queue, 12 threads: 21.98 ms median, 5.65x</title></rect>
+<rect x="612" y="178.74" width="8" height="8" fill="#e5622a" data-pool="shared_queue" data-threads="16" data-ms="23.6602932" data-speedup="5.24621153"><title>shared queue, 16 threads: 23.66 ms median, 5.25x</title></rect>
+<text class="label" x="328" y="172.38" text-anchor="end" style="fill:#3987e5">5.16×</text>
+<text class="label" x="328" y="186.38" text-anchor="end" style="fill:#e5622a">4.91×</text>
+</svg>
