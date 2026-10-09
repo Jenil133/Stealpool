@@ -12,6 +12,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(STEALPOOL_BUILD_TESTS "Build the GoogleTest suite" ON)
 option(STEALPOOL_BUILD_EXAMPLES "Build the example programs" ON)
+# Benchmarks only make sense optimised, so they default to ON for Release builds only.
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+  set(STEALPOOL_BENCHMARKS_DEFAULT ON)
+else()
+  set(STEALPOOL_BENCHMARKS_DEFAULT OFF)
+endif()
+option(STEALPOOL_BUILD_BENCHMARKS "Build the Google Benchmark suite" ${STEALPOOL_BENCHMARKS_DEFAULT})
 set(STEALPOOL_SANITIZER "" CACHE STRING "Sanitizer for every target: empty, 'address' (ASan+UBSan) or 'thread'")
 set_property(CACHE STEALPOOL_SANITIZER PROPERTY STRINGS "" address thread)
 
@@ -73,4 +80,17 @@ if(STEALPOOL_BUILD_TESTS)
     target_compile_options(gtest_main PRIVATE -Wno-character-conversion)
   endif()
   add_subdirectory(tests)
+endif()
+
+if(STEALPOOL_BUILD_BENCHMARKS)
+  include(FetchContent)
+  FetchContent_Declare(googlebenchmark
+    URL https://github.com/google/benchmark/archive/refs/tags/v1.9.4.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
+  set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
+  set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "" FORCE)
+  set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "" FORCE)
+  set(BENCHMARK_ENABLE_WERROR OFF CACHE BOOL "" FORCE)
+  FetchContent_MakeAvailable(googlebenchmark)
+  add_subdirectory(bench)
 endif()
