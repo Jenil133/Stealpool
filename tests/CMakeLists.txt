@@ -20,6 +20,7 @@ stealpool_add_test(thread_pool_test)
 stealpool_add_test(task_group_test)
 stealpool_add_test(parallel_for_test)
 stealpool_add_test(shutdown_test)
+stealpool_add_test(task_graph_test)
 # Longer randomized runs; part of the default suite, selectable with `ctest -L stress`
 # (or skipped with `-LE stress`). STEALPOOL_STRESS_SEED / STEALPOOL_STRESS_SCALE in the
 # environment pick the seed and the amount of work (see tests/stress_util.hpp).
